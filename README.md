@@ -7,7 +7,7 @@ depends on nltk for exposing wordnet.* methods for now
 see (http://nltk.org/install.html)
 
 to see a list of callable methods in wordnet.* run:
-python introspection.py
+- python introspection.py
 
 e.g. output:
 - wordnet.abspath ( fileid )

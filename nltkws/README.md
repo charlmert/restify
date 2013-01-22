@@ -19,6 +19,7 @@ password: admin
 
 use developer server
 - python manage.py runserver
+
 server started at http://localhost:8000
 
 OR

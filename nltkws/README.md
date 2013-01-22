@@ -37,3 +37,6 @@ http://localhost:8000/home
 
 and
 http://localhost:8000/raw
+
+to see an example of the wordnet morphy function:
+http://localhost:8000/morphy/verified

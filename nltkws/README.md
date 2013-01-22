@@ -10,16 +10,16 @@ change settings nltkws/nltkws/settings.py
    e.g. '/home/charl/open/nltkws/rest/templates'
 
 run sql (sync/init database)
-cd nltkws
-python manage.py syncdb
+- cd nltkws
+- python manage.py syncdb
 
 when creating a superuser use
 username: admin
 password: admin
 
 use developer server
-python manage.py runserver
-# server started at http://localhost:8000
+- python manage.py runserver
+server started at http://localhost:8000
 
 OR
 

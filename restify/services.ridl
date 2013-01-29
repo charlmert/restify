@@ -1,0 +1,71 @@
+// this is a riddle file or .ridl (Rest Interface Definition Language)
+
+- define enums<dropdown>, structs <serialized objects>
+- define exception structs
+
+// ideally, complex types will be defined as tupples, dictionaries or lists as in
+// python
+User = [
+  'username',
+  'email',
+  'password'
+]
+
+// define the target framework options here e.g. django app specific requirements
+
+/**
+ *  @project nltkws
+ *  @app rest
+ *
+ *  will copy the settings from the specified location to the target project
+ *  @settings nltkws/nltkws/settings.py
+ */
+
+/**
+ * You can define enums, which are just 32 bit integers. Values are optional
+ * and start at 1 if not supplied, C style again.
+ */
+enum Operation {
+  ADD = 1,
+  SUBTRACT = 2,
+  MULTIPLY = 3,
+  DIVIDE = 4
+}
+
+// thrift way
+struct User {
+  1: string username = 0,
+  2: string email,
+  3: string password,
+}
+
+// thrift way of describing complex structures using json
+/**
+ * Thrift also lets you define constants for use across languages. Complex
+ * types and structs are specified using JSON notation.
+ */
+const i32 INT32CONSTANT = 9853
+const map<string,string> MAPCONSTANT = {'hello':'world', 'goodnight':'moon'}
+
+// will be converted to the serialized or json equivalents
+// using thrift transport stack
+
+// the service interface 
+interface auth { //differs only by interface is written as "service"
+  /**
+   * thrift compatible
+   * @namespace: auth/register
+   * @mimetype: application/json
+   */
+  bool register(User),
+
+  //support inline restfify meta information assignments
+  string get_email(User), //@namespace:auth/get_email
+
+  bool update(User), //@namespace:auth/update
+
+  bool remove(User), //@namespace:auth/remove
+
+  bool authenticate(), //@namespace:auth/auth
+
+}

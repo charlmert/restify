@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^raw$', 'rest.views.raw', name='raw'),
     url(r'^morphy/(.*)$', 'rest.views.morphy', name='morphy'),
     url(r'^morphy/?P<word>(.*)$', 'rest.views.morphy', name='morphy'),
+    url(r'^kwargs/(.*)$', 'rest.views.kwargs', name='kwargs'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

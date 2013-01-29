@@ -3,6 +3,8 @@ restify
 
 using python/inspect to produce restful interfaces to any classes methods as a django project skeleton.
 
+sudo python setup.py install
+
 restify -i services.py -t django -p proj -a rest
 //restify -i services.py -t django.xml
 //restify -i services.thrift

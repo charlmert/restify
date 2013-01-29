@@ -5,9 +5,9 @@ using python/inspect to produce restful interfaces to any classes methods as a d
 
 sudo python setup.py install
 
-restify -i services.py -t django -p proj -a rest
-//restify -i services.py -t django.xml
-//restify -i services.thrift
+- restify -i services.py -t django -p proj -a rest
+- //restify -i services.py -t django.xml
+- //restify -i services.thrift
 
 #todo: (see nltkws django project)
 - wsgi apache

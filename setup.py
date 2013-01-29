@@ -9,6 +9,7 @@
 
 from distutils.core import setup
 import restify as _restify
+import os
 import sys
 
 SETUP_ARGS = dict(
@@ -37,9 +38,11 @@ SETUP_ARGS = dict(
     packages=["restify"],
 )
 
-
 def main():
-    #if sys.argv[1] in ('install', 'build'):
+    if sys.argv[1] in ('install', 'build'):
+      os.system('cp bin/restify /usr/bin/restify')      
+      os.system('chmod 775 /usr/bin/restify')
+
     setup(**SETUP_ARGS)
     return 0
 
